@@ -11,12 +11,12 @@ import Foundation
 
 class Song {
     
-    let name: String
-    let artist: String
-    let album: String
-    let year: Int
-    let composer: String
-    let length: Float
+    var name: String
+    var artist: String
+    var album: String
+    var year: Int
+    var composer: String
+    var length: Float
     
     /**
     Add a new song
@@ -32,3 +32,4 @@ class Song {
     }
     
 }
+

@@ -8,7 +8,6 @@
 
 import Foundation
 class AlbumList:SongList{
-    var album:[Song];
     var artist: String;
     var name: String;
     var composer: String;
@@ -16,7 +15,6 @@ class AlbumList:SongList{
     var length: Float;
     
     init(name:String,artist:String,composer:String,year:Int,length:Float){
-        self.album=[];
         self.artist=artist;
         self.name=name;
         self.composer=composer;
@@ -24,12 +22,16 @@ class AlbumList:SongList{
         self.year=year;
     }
     func addSongToAlbum(song: Song){
-        self.album.append(song)
+        song.album=self.name;
+        song.artist=self.artist;
+        song.composer=self.composer;
+        song.year=self.year;
+        self.songs.append(song)
     }
     func removeSongFromAlbum(name: String){
-        for (idx,album) in enumerate(self.album){
+        for (idx,album) in enumerate(self.songs){
             if album.name==name{
-                self.album.removeAtIndex(idx);
+                self.songs.removeAtIndex(idx);
                 break;
             }
         }
