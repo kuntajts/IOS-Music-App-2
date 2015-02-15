@@ -42,10 +42,10 @@
 		1AC900441A8FD4AF009128E0 /* IOS Music App 2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS Music App 2.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC900491A8FD4AF009128E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC9004A1A8FD4AF009128E0 /* IOS_Music_App_2_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_Music_App_2_0Tests.swift; sourceTree = "<group>"; };
-		1AC900541A8FD4DA009128E0 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Song.swift; path = ../Song.swift; sourceTree = "<group>"; };
-		1AC900561A8FD4EC009128E0 /* SongList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SongList.swift; path = ../SongList.swift; sourceTree = "<group>"; };
-		1AC900581A8FD509009128E0 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Playlist.swift; path = ../Playlist.swift; sourceTree = "<group>"; };
-		1AC9005C1A8FF23C009128E0 /* AlbumList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumList.swift; path = ../AlbumList.swift; sourceTree = "<group>"; };
+		1AC900541A8FD4DA009128E0 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		1AC900561A8FD4EC009128E0 /* SongList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
+		1AC900581A8FD509009128E0 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		1AC9005C1A8FF23C009128E0 /* AlbumList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
