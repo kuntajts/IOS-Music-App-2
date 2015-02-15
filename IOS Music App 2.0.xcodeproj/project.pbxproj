@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F62D9871A9140F800DF0DFA /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62D9861A9140F800DF0DFA /* ThirdViewController.swift */; };
 		1AC900331A8FD4AF009128E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900321A8FD4AF009128E0 /* AppDelegate.swift */; };
 		1AC900351A8FD4AF009128E0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900341A8FD4AF009128E0 /* FirstViewController.swift */; };
 		1AC900371A8FD4AF009128E0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900361A8FD4AF009128E0 /* SecondViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F62D9861A9140F800DF0DFA /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		1AC9002D1A8FD4AF009128E0 /* IOS Music App 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Music App 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC900311A8FD4AF009128E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC900321A8FD4AF009128E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				1AC900341A8FD4AF009128E0 /* FirstViewController.swift */,
 				1AC900361A8FD4AF009128E0 /* SecondViewController.swift */,
 				1AC900381A8FD4AF009128E0 /* Main.storyboard */,
+				0F62D9861A9140F800DF0DFA /* ThirdViewController.swift */,
 				1AC9003B1A8FD4AF009128E0 /* Images.xcassets */,
 				1AC9003D1A8FD4AF009128E0 /* LaunchScreen.xib */,
 				1AC900301A8FD4AF009128E0 /* Supporting Files */,
@@ -233,6 +236,7 @@
 				1AC900331A8FD4AF009128E0 /* AppDelegate.swift in Sources */,
 				1AC900351A8FD4AF009128E0 /* FirstViewController.swift in Sources */,
 				1AC900591A8FD509009128E0 /* Playlist.swift in Sources */,
+				0F62D9871A9140F800DF0DFA /* ThirdViewController.swift in Sources */,
 				1AC9005D1A8FF23C009128E0 /* AlbumList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
