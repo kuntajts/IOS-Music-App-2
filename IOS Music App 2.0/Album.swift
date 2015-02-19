@@ -1,5 +1,5 @@
 //
-//  AlbumList.swift
+//  Album.swift
 //  IOS Music App 2.0
 //
 //  Created by Kaloyan Popzlatev on 2/14/15.
@@ -7,18 +7,25 @@
 //
 
 import Foundation
-class AlbumList:SongList{
+class Album:SongList{
     var artist: String;
     var name: String;
     var composer: String;
     var year: Int;
-    var length: Float;
+    var length: Float {
+        get {
+            var albumLength: Float = 0
+            for song in self.songs {
+                albumLength = albumLength + song.length
+            }
+            return albumLength
+        }
+    }
     
-    init(name:String,artist:String,composer:String,year:Int,length:Float){
+    init(name:String,artist:String,composer:String,year:Int){
         self.artist=artist;
         self.name=name;
         self.composer=composer;
-        self.length=length;
         self.year=year;
     }
     func addSongToAlbum(song: Song){

@@ -11,6 +11,15 @@ import Foundation
 class Playlist:SongList{
     
     let playlistName: String;
+    var length: Float {
+        get {
+            var albumLength: Float = 0
+            for song in self.songs {
+                albumLength = albumLength + song.length
+            }
+            return albumLength
+        }
+    }
     
     init(name: String){
         self.playlistName=name;

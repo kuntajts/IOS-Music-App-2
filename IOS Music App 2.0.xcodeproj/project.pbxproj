@@ -18,7 +18,7 @@
 		1AC900551A8FD4DA009128E0 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900541A8FD4DA009128E0 /* Song.swift */; };
 		1AC900571A8FD4EC009128E0 /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900561A8FD4EC009128E0 /* SongList.swift */; };
 		1AC900591A8FD509009128E0 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900581A8FD509009128E0 /* Playlist.swift */; };
-		1AC9005D1A8FF23C009128E0 /* AlbumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9005C1A8FF23C009128E0 /* AlbumList.swift */; };
+		1AC9005D1A8FF23C009128E0 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9005C1A8FF23C009128E0 /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		1AC900541A8FD4DA009128E0 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		1AC900561A8FD4EC009128E0 /* SongList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
 		1AC900581A8FD509009128E0 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
-		1AC9005C1A8FF23C009128E0 /* AlbumList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumList.swift; sourceTree = "<group>"; };
+		1AC9005C1A8FF23C009128E0 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 		1AC9002F1A8FD4AF009128E0 /* IOS Music App 2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				1AC9005C1A8FF23C009128E0 /* AlbumList.swift */,
+				1AC9005C1A8FF23C009128E0 /* Album.swift */,
 				1AC900581A8FD509009128E0 /* Playlist.swift */,
 				1AC900561A8FD4EC009128E0 /* SongList.swift */,
 				1AC900541A8FD4DA009128E0 /* Song.swift */,
@@ -237,7 +237,7 @@
 				1AC900351A8FD4AF009128E0 /* FirstViewController.swift in Sources */,
 				1AC900591A8FD509009128E0 /* Playlist.swift in Sources */,
 				0F62D9871A9140F800DF0DFA /* ThirdViewController.swift in Sources */,
-				1AC9005D1A8FF23C009128E0 /* AlbumList.swift in Sources */,
+				1AC9005D1A8FF23C009128E0 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
