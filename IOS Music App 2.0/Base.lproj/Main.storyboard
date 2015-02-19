@@ -41,14 +41,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Length:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq8-Kc-5aJ">
-                                <rect key="frame" x="16" y="273" width="58" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKQ-D5-e5y">
-                                <rect key="frame" x="16" y="176" width="39" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Length (3:00):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq8-Kc-5aJ">
+                                <rect key="frame" x="16" y="273" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,22 +68,31 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="AZx-Ut-4eG">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2005" minimumValue="1900" maximumValue="2015" translatesAutoresizingMaskIntoConstraints="NO" id="AZx-Ut-4eG">
                                 <rect key="frame" x="306" y="172" width="94" height="29"/>
+                                <connections>
+                                    <action selector="yearChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="FhO-mf-HEB"/>
+                                </connections>
                             </stepper>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAy-ZX-HWN">
                                 <rect key="frame" x="128" y="219" width="450" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Opl-m0-roh">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="180" minValue="1" maxValue="599" translatesAutoresizingMaskIntoConstraints="NO" id="Opl-m0-roh">
                                 <rect key="frame" x="126" y="269" width="454" height="31"/>
+                                <connections>
+                                    <action selector="lengthChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="HCw-D2-nCa"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFh-w8-UgR">
                                 <rect key="frame" x="532" y="314" width="49" height="30"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="A8c-Uk-wlw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPJ-Qt-3fp">
                                 <rect key="frame" x="16" y="391" width="37" height="21"/>
@@ -107,9 +110,18 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="removedClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="8X4-Ta-UR7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove Song:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz6-46-2Ar">
                                 <rect key="frame" x="244" y="350" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Year (2005):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKQ-D5-e5y">
+                                <rect key="frame" x="16" y="172" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -162,6 +174,17 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add/Remove" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="albumField" destination="ySE-mP-abF" id="y8M-n4-Fsj"/>
+                        <outlet property="artistField" destination="uXH-dI-OX4" id="q9W-lP-qNT"/>
+                        <outlet property="composerField" destination="HAy-ZX-HWN" id="f0n-WT-3ib"/>
+                        <outlet property="lengthLabel" destination="Iq8-Kc-5aJ" id="qqP-Yw-vRL"/>
+                        <outlet property="lengthSlider" destination="Opl-m0-roh" id="pzA-8U-muh"/>
+                        <outlet property="titleField" destination="mk0-jT-E9b" id="raf-eo-sWh"/>
+                        <outlet property="titleToRemoveField" destination="Jz5-Rv-IHv" id="jX1-xR-52b"/>
+                        <outlet property="yearLabel" destination="cKQ-D5-e5y" id="OKX-nw-5bn"/>
+                        <outlet property="yearStepper" destination="AZx-Ut-4eG" id="5lL-ni-erp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
