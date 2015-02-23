@@ -20,6 +20,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var playlistList: PlaylistList = PlaylistList()
     
     let cellIdentifier = "dog"
+    let cellIdentifier2 = "cat"
     var isShowingAlbums:Bool = true
     
     override func viewDidLoad() {
@@ -27,32 +28,52 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         isShowingAlbums = true
         apTableView.delegate = self
         apTableView.dataSource = self
+        songsTableView.delegate = self
+        songsTableView.dataSource = self
         albumList = theAppModel.fullModel.albumList
         playlistList = theAppModel.fullModel.playlistList
         self.apTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        self.songsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier2)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (isShowingAlbums) {
-            return albumList.albums.count
+        if (tableView.tag == 0) {
+            if (isShowingAlbums) {
+                return albumList.albums.count
+            } else {
+                return playlistList.playlist.count
+            }
         } else {
-            return playlistList.playlist.count
+            return songList.songs.count
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.apTableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell
-        
-        cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellIdentifier)
-        
-        if (isShowingAlbums) {
-            cell.textLabel?.text = albumList.albums[indexPath.row].name
-            cell.detailTextLabel?.text = albumList.albums[indexPath.row].artist
+        if (tableView.tag == 0) {
+            var cell:UITableViewCell = self.apTableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell
+            
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellIdentifier)
+            
+            if (isShowingAlbums) {
+                cell.textLabel?.text = albumList.albums[indexPath.row].name
+                cell.detailTextLabel?.text = albumList.albums[indexPath.row].artist
+            } else {
+                cell.textLabel?.text = playlistList.playlist[indexPath.row].playlistName
+            }
+            
+            return cell
         } else {
-            cell.textLabel?.text = playlistList.playlist[indexPath.row].playlistName
+            var cell:UITableViewCell = self.songsTableView.dequeueReusableCellWithIdentifier(cellIdentifier2) as UITableViewCell
+            
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellIdentifier2)
+            
+            
+            cell.textLabel?.text = songList.songs[indexPath.row].name
+            cell.detailTextLabel?.text = songList.songs[indexPath.row].artist
+            
+            return cell
         }
         
-        return cell
     }    
     
     @IBAction func viewChanged(sender: UISegmentedControl) {

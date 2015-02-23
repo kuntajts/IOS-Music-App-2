@@ -415,31 +415,37 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XPo-mw-1L1">
                                 <rect key="frame" x="16" y="56" width="568" height="192"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="192" id="A9M-1W-ejW"/>
+                                </constraints>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Songs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-xx-qSH">
                                 <rect key="frame" x="261" y="256" width="79" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="fqg-l2-pRk"/>
+                                    <constraint firstAttribute="width" constant="79" id="XZ4-WJ-YPp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nko-Gh-0ka">
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nko-Gh-0ka">
                                 <rect key="frame" x="16" y="285" width="568" height="271"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="top" secondItem="Fw1-WT-mlB" secondAttribute="bottom" constant="8" symbolic="YES" id="5TP-Ew-chJ"/>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="centerX" secondItem="Fw1-WT-mlB" secondAttribute="centerX" id="5v9-7v-SYS"/>
-                            <constraint firstItem="Fw1-WT-mlB" firstAttribute="top" secondItem="UG5-7c-f6p" secondAttribute="bottom" id="U0p-lI-ZCa"/>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="leading" secondItem="CiG-iJ-YRY" secondAttribute="leadingMargin" id="ekN-B6-LMd"/>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="centerX" secondItem="NKB-xx-qSH" secondAttribute="centerX" id="ls0-eI-EMa"/>
-                            <constraint firstItem="r5l-9q-h2v" firstAttribute="top" secondItem="NKB-xx-qSH" secondAttribute="bottom" constant="274" id="qtk-uQ-TIZ"/>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="trailing" secondItem="CiG-iJ-YRY" secondAttribute="trailingMargin" id="snN-p3-tHM"/>
-                            <constraint firstItem="NKB-xx-qSH" firstAttribute="top" secondItem="XPo-mw-1L1" secondAttribute="bottom" constant="8" symbolic="YES" id="t3e-9g-ChJ"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="trailing" secondItem="Nko-Gh-0ka" secondAttribute="trailing" id="8jN-N6-JOj"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="centerX" secondItem="Fw1-WT-mlB" secondAttribute="centerX" id="9Mu-PF-1t4"/>
+                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="trailing" secondItem="CiG-iJ-YRY" secondAttribute="trailingMargin" id="E3b-3N-I1h"/>
+                            <constraint firstItem="Fw1-WT-mlB" firstAttribute="top" secondItem="UG5-7c-f6p" secondAttribute="bottom" id="JpC-oq-5Jc"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Nko-Gh-0ka" secondAttribute="bottom" constant="44" id="K0K-uN-wcq"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="leading" secondItem="CiG-iJ-YRY" secondAttribute="leadingMargin" id="Ki3-Xz-hVz"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="top" secondItem="Fw1-WT-mlB" secondAttribute="bottom" constant="8" symbolic="YES" id="Wwc-E4-0uS"/>
+                            <constraint firstItem="NKB-xx-qSH" firstAttribute="top" secondItem="XPo-mw-1L1" secondAttribute="bottom" constant="8" symbolic="YES" id="cEz-vK-fyO"/>
+                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="leading" secondItem="XPo-mw-1L1" secondAttribute="leading" id="eUt-na-sk4"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="centerX" secondItem="NKB-xx-qSH" secondAttribute="centerX" id="nT8-HU-mGy"/>
+                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="top" secondItem="NKB-xx-qSH" secondAttribute="bottom" constant="8" symbolic="YES" id="vtv-s4-Csg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="jY1-Ev-mNz"/>
