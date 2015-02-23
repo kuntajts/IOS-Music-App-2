@@ -1,10 +1,13 @@
-//
-//  FirstViewController.swift
-//  IOS Music App 2.0
-//
-//  Created by Kaloyan Popzlatev on 2/14/15.
-//  Copyright (c) 2015 Kaloyan Popzlatev. All rights reserved.
-//
+/*
+* FirstViewController.swift
+* Practicum 2: IOS Music App 2
+* Description: Creates controller that supports adding Songs, removing Songs, displaying all songs or songs by artist
+* Created by: Charles Woodward and Jordan Smith
+* Collaborators: Sam Kamenetz and Kal Popzlatev
+* Creation date:  2/14/15
+* Date last modified:  2/23/2015
+* Copyright (c) 2015 Sugr. All rights reserved.
+*/
 
 import UIKit
 
@@ -23,11 +26,28 @@ class FirstViewController: UIViewController {
     var theAppModel: SharedAppModel = SharedAppModel.theSharedAppModel
     var mySongList = SongList()
     
+    /**
+    * Function: viewDidLoad
+    * Purpose: initialzes the song list from the model created
+    * Inputs: none
+    * Output:
+    * Created by Jordan Smith
+    */
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mySongList = theAppModel.fullModel.songList
     }
     
+    /**
+    * Function: refreshUI
+    * Purpose: writes value of yearStepper and lengthSlider to appropiate text fields on UI
+    * Inputs: none
+    * Output:
+    none- changes text of yearLabel and lengthLabel
+    * Created by Jordan Smith
+    */
+
     func refreshUI(){
         var seconds: String {
             get {
@@ -48,7 +68,14 @@ class FirstViewController: UIViewController {
         }
         titleToRemoveField.text = songsss*/
     }
-    
+    /**
+    * Function: refreshUIFields
+    * Purpose: Clears all the input fields and sets the slider and stepper back to initial values
+    * Inputs: none
+    * Output:
+    none- changes text of yearLabel and lengthLabel and clears other fields
+    * Created by Jordan Smith
+    */
     func refreshUIFields() {
         titleField.text = ""
         artistField.text = ""
@@ -59,14 +86,34 @@ class FirstViewController: UIViewController {
         lengthSlider.value = 180
         refreshUI()
     }
-    
+    /**
+    * Function: yearChanged
+    * Purpose: refreshes the view in order to get the year label to match the value that the year stepper changed to
+    * Inputs: none
+    * Output:none
+    * Created by Charles Woodward
+    */
     @IBAction func yearChanged(sender: UIStepper) {
         refreshUI()
     }
-    
+    /**
+    * Function: lengthChanged
+    * Purpose: refreshes the view in order to get the length label to match the value that the length slider changed to
+    * Inputs: none
+    * Output:none
+    * Created by Jordan Smith
+    */
     @IBAction func lengthChanged(sender: UISlider) {
         refreshUI()
     }
+    /**
+    * Function: addClicked
+    * Purpose: checks all the fields to see if they are filled out or not when add button is clicked. Artist and song name are required, others are optional. Gives you an alert message based on what you have filled out and whether or not the song can be added. Asks if you want to add if optional fields are empty.
+    * Inputs:none
+    * Output:none
+    * Created by Charles Woodward
+    */
+
     @IBAction func addClicked(sender: UIButton) {
         if artistField.text == "" || titleField.text == "" {
             var alertView = UIAlertView();
@@ -103,12 +150,26 @@ class FirstViewController: UIViewController {
         }
     }
     
+    /**
+    * Function: addSongToSongList
+    * Purpose: adds the actual song to the list of songs
+    * Inputs:none
+    * Output:none
+    *Created by Jordan Smith
+    */
+
     func addSongToSongList() {
         mySongList.addSong(titleField.text, artist: artistField.text, album: albumField.text, year: Int(yearStepper.value), composer: composerField.text, length: Float(lengthSlider.value))
         refreshUIFields()
 
     }
-    
+    /**
+    * Function: removeClicked
+    * Purpose: connects action of clicking remove button to the remove function in Song/SongList model. Also puts up an alert telling you whether or not the song was removed based on if the name you entered was in the list or not.
+    * Inputs:none
+    * Output:none
+    * Created by:Jordan Smith
+    */
     @IBAction func removedClicked(sender: UIButton) {
         var originalSize = mySongList.songs.count
         mySongList.removeSong(titleToRemoveField.text)
@@ -122,7 +183,13 @@ class FirstViewController: UIViewController {
         }
 
     }
-    
+    /**
+    * Function: backgroundTouch
+    * Purpose: Gets rid of the popup keyboards when you touch outside of the field.
+    * Inputs:none
+    * Output:none
+    * Created by:Charles Woodward
+    */
     @IBAction func backgroundTouch(sender: UIControl) {
         titleToRemoveField.resignFirstResponder()
         composerField.resignFirstResponder()

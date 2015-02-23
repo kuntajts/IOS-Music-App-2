@@ -46,7 +46,13 @@ class SongList {
         return artistSongs
     }
 }
-
+/**
+* Function: extension
+* Purpose: adds the total to the songlist so we can keep track of how long the entire list of songs would be
+* Inputs: none
+* Output:
+* Created by Sam and Kal
+*/
 extension SongList{
     func getTotalLength()->Float{
         var total:Float = 0;
