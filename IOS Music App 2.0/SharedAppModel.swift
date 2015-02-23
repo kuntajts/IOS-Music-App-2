@@ -12,11 +12,13 @@ private let _appModelSharedInstance = SharedAppModel()
 
 class SharedAppModel {
     let songList: SongList
-    let albumList: [Album] = []
-    let playlistList: [Playlist] = []
+    var albumList: [Album]
+    var playlistList: [Playlist]
 
     init() {
         songList = SongList()
+        albumList = []
+        playlistList = []
     }
     
     class var theSharedAppModel: SharedAppModel {

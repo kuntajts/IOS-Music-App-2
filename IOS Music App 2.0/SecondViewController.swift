@@ -21,10 +21,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var removePlaylistButton: UIButton!
+    @IBOutlet weak var removeAlbumButton: UIButton!
     
     var theAppModel: SharedAppModel = SharedAppModel.theSharedAppModel
     var albumList: [Album] = []
     var playlistList: [Playlist] = []
+    var songList: SongList = SongList()
     
     let cellIdentifier = "cell"
     var isShowingAlbums:Bool = true
@@ -32,8 +35,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isShowingAlbums = true
         albumList = theAppModel.albumList
         playlistList = theAppModel.playlistList
+        songList = theAppModel.songList
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
     func refreshUI(){
@@ -66,6 +72,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             producerLabel.hidden = false
             albumButton.hidden = false
             playlistButton.hidden = true
+            removeAlbumButton.hidden = false
+            removePlaylistButton.hidden = true
         }else{
             isShowingAlbums = false
             nameLabel.hidden = false
@@ -78,7 +86,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             producerLabel.hidden = true
             albumButton.hidden = true
             playlistButton.hidden = false
+            removeAlbumButton.hidden = true
+            removePlaylistButton.hidden = false
         }
+        
+        sendFieldsToFirstResponder()
+        tableView.reloadData()
+        refreshUIFields()
     }
 
     @IBAction func addAlbum(sender: UIButton) {
@@ -110,9 +124,22 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var newAlbum: Album = Album(name: nameField.text, artist: artistField.text, composer: producerField.text, year: Int(yearStepper.value))
         albumList.append(newAlbum)
         refreshUIFields()
+        sendFieldsToFirstResponder()
+        theAppModel.albumList = albumList
         tableView.reloadData()
     }
    
+    @IBAction func removeAlbum(sender: UIButton) {
+        for (idx, album) in enumerate(self.albumList) {
+            if album.name == nameField.text {
+                self.albumList.removeAtIndex(idx)
+            }
+        }
+        theAppModel.albumList = albumList
+        tableView.reloadData()
+        refreshUIFields()
+    }
+    
     @IBAction func addPlaylist(sender: UIButton) {
         if nameField.text == "" {
             var alertView = UIAlertView();
@@ -125,16 +152,34 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             playlistList.append(newPlaylist)
             refreshUIFields()
         }
+        theAppModel.playlistList = playlistList
+        sendFieldsToFirstResponder()
+        tableView.reloadData()
     }
     
+    @IBAction func removePlaylist(sender: UIButton) {
+        for (idx, playlist) in enumerate(self.playlistList) {
+            if playlist.playlistName == nameField.text {
+                self.playlistList.removeAtIndex(idx)
+            }
+        }
+        theAppModel.playlistList = playlistList
+        tableView.reloadData()
+        refreshUIFields()
+
+    }
     @IBAction func backgroundTouch(sender: UIControl) {
+        sendFieldsToFirstResponder()
+    }
+    
+    func sendFieldsToFirstResponder() {
         nameField.resignFirstResponder()
         artistField.resignFirstResponder()
         producerField.resignFirstResponder()
     }
     
-   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isShowingAlbums {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (isShowingAlbums) {
             return albumList.count
         } else {
             return playlistList.count
@@ -143,10 +188,12 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell
-        cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
         
-        if isShowingAlbums {
-           cell.textLabel?.text = albumList[indexPath.row].name
+        cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellIdentifier)
+        
+        if (isShowingAlbums) {
+            cell.textLabel?.text = albumList[indexPath.row].name
+            cell.detailTextLabel?.text = albumList[indexPath.row].artist
         } else {
             cell.textLabel?.text = playlistList[indexPath.row].playlistName
         }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F3644CA1A9A9ECD0009957A /* SharedAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3644C91A9A9ECD0009957A /* SharedAppModel.swift */; };
-		0F62D9871A9140F800DF0DFA /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62D9861A9140F800DF0DFA /* ThirdViewController.swift */; };
+		0F3644CC1A9ACA850009957A /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3644CB1A9ACA850009957A /* ThirdViewController.swift */; };
 		1AC900331A8FD4AF009128E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900321A8FD4AF009128E0 /* AppDelegate.swift */; };
 		1AC900351A8FD4AF009128E0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900341A8FD4AF009128E0 /* FirstViewController.swift */; };
 		1AC900371A8FD4AF009128E0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900361A8FD4AF009128E0 /* SecondViewController.swift */; };
@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		0F3644C91A9A9ECD0009957A /* SharedAppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedAppModel.swift; sourceTree = "<group>"; };
-		0F62D9861A9140F800DF0DFA /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		0F3644CB1A9ACA850009957A /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		1AC9002D1A8FD4AF009128E0 /* IOS Music App 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Music App 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC900311A8FD4AF009128E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC900321A8FD4AF009128E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 				1AC900341A8FD4AF009128E0 /* FirstViewController.swift */,
 				1AC900361A8FD4AF009128E0 /* SecondViewController.swift */,
 				1AC900381A8FD4AF009128E0 /* Main.storyboard */,
-				0F62D9861A9140F800DF0DFA /* ThirdViewController.swift */,
+				0F3644CB1A9ACA850009957A /* ThirdViewController.swift */,
 				1AC9003B1A8FD4AF009128E0 /* Images.xcassets */,
 				1AC9003D1A8FD4AF009128E0 /* LaunchScreen.xib */,
 				1AC900301A8FD4AF009128E0 /* Supporting Files */,
@@ -234,13 +234,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AC900571A8FD4EC009128E0 /* SongList.swift in Sources */,
+				0F3644CC1A9ACA850009957A /* ThirdViewController.swift in Sources */,
 				1AC900551A8FD4DA009128E0 /* Song.swift in Sources */,
 				1AC900371A8FD4AF009128E0 /* SecondViewController.swift in Sources */,
 				1AC900331A8FD4AF009128E0 /* AppDelegate.swift in Sources */,
 				1AC900351A8FD4AF009128E0 /* FirstViewController.swift in Sources */,
 				1AC900591A8FD509009128E0 /* Playlist.swift in Sources */,
 				0F3644CA1A9A9ECD0009957A /* SharedAppModel.swift in Sources */,
-				0F62D9871A9140F800DF0DFA /* ThirdViewController.swift in Sources */,
 				1AC9005D1A8FF23C009128E0 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
