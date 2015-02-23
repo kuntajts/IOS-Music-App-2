@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3644CA1A9A9ECD0009957A /* SharedAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3644C91A9A9ECD0009957A /* SharedAppModel.swift */; };
 		0F62D9871A9140F800DF0DFA /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62D9861A9140F800DF0DFA /* ThirdViewController.swift */; };
 		1AC900331A8FD4AF009128E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900321A8FD4AF009128E0 /* AppDelegate.swift */; };
 		1AC900351A8FD4AF009128E0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900341A8FD4AF009128E0 /* FirstViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F3644C91A9A9ECD0009957A /* SharedAppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedAppModel.swift; sourceTree = "<group>"; };
 		0F62D9861A9140F800DF0DFA /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		1AC9002D1A8FD4AF009128E0 /* IOS Music App 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Music App 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC900311A8FD4AF009128E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		1AC9002F1A8FD4AF009128E0 /* IOS Music App 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				0F3644C91A9A9ECD0009957A /* SharedAppModel.swift */,
 				1AC9005C1A8FF23C009128E0 /* Album.swift */,
 				1AC900581A8FD509009128E0 /* Playlist.swift */,
 				1AC900561A8FD4EC009128E0 /* SongList.swift */,
@@ -236,6 +239,7 @@
 				1AC900331A8FD4AF009128E0 /* AppDelegate.swift in Sources */,
 				1AC900351A8FD4AF009128E0 /* FirstViewController.swift in Sources */,
 				1AC900591A8FD509009128E0 /* Playlist.swift in Sources */,
+				0F3644CA1A9A9ECD0009957A /* SharedAppModel.swift in Sources */,
 				0F62D9871A9140F800DF0DFA /* ThirdViewController.swift in Sources */,
 				1AC9005D1A8FF23C009128E0 /* Album.swift in Sources */,
 			);

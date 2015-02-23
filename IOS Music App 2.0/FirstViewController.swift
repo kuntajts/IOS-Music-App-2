@@ -20,7 +20,13 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var lengthLabel: UILabel!
     @IBOutlet weak var lengthSlider: UISlider!
     
-    let mySongList = SongList();
+    var theAppModel: SharedAppModel = SharedAppModel.theSharedAppModel
+    var mySongList = SongList()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mySongList = theAppModel.songList
+    }
     
     func refreshUI(){
         var seconds: String {
@@ -117,9 +123,12 @@ class FirstViewController: UIViewController {
 
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func backgroundTouch(sender: UIControl) {
+        titleToRemoveField.resignFirstResponder()
+        composerField.resignFirstResponder()
+        albumField.resignFirstResponder()
+        artistField.resignFirstResponder()
+        titleField.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {

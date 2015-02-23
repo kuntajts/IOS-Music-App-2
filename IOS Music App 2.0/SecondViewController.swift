@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var playlistButton: UIButton!
     @IBOutlet weak var albumButton: UIButton!
     @IBOutlet weak var producerField: UITextField!
@@ -21,8 +22,19 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
     
+    var theAppModel: SharedAppModel = SharedAppModel.theSharedAppModel
     var albumList: [Album] = []
     var playlistList: [Playlist] = []
+    
+    let cellIdentifier = "cell"
+    var isShowingAlbums:Bool = true
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        albumList = theAppModel.albumList
+        playlistList = theAppModel.playlistList
+    }
     
     func refreshUI(){
         yearLabel.text=String(format: "Year (%d):",Int(yearStepper.value))
@@ -43,6 +55,7 @@ class SecondViewController: UIViewController {
     
     @IBAction func toggleControls(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
+            isShowingAlbums = true
             nameLabel.hidden = false
             nameField.hidden = false
             artistField.hidden = false
@@ -54,6 +67,7 @@ class SecondViewController: UIViewController {
             albumButton.hidden = false
             playlistButton.hidden = true
         }else{
+            isShowingAlbums = false
             nameLabel.hidden = false
             nameField.hidden = false
             artistField.hidden = true
@@ -96,6 +110,7 @@ class SecondViewController: UIViewController {
         var newAlbum: Album = Album(name: nameField.text, artist: artistField.text, composer: producerField.text, year: Int(yearStepper.value))
         albumList.append(newAlbum)
         refreshUIFields()
+        tableView.reloadData()
     }
    
     @IBAction func addPlaylist(sender: UIButton) {
@@ -112,9 +127,31 @@ class SecondViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func backgroundTouch(sender: UIControl) {
+        nameField.resignFirstResponder()
+        artistField.resignFirstResponder()
+        producerField.resignFirstResponder()
+    }
+    
+   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isShowingAlbums {
+            return albumList.count
+        } else {
+            return playlistList.count
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell
+        cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
+        
+        if isShowingAlbums {
+           cell.textLabel?.text = albumList[indexPath.row].name
+        } else {
+            cell.textLabel?.text = playlistList[indexPath.row].playlistName
+        }
+        
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
