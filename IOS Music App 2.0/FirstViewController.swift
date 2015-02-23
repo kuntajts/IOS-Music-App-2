@@ -25,7 +25,7 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mySongList = theAppModel.songList
+        mySongList = theAppModel.fullModel.songList
     }
     
     func refreshUI(){

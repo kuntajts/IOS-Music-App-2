@@ -25,8 +25,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var removeAlbumButton: UIButton!
     
     var theAppModel: SharedAppModel = SharedAppModel.theSharedAppModel
-    var albumList: [Album] = []
-    var playlistList: [Playlist] = []
+    var albumList: AlbumList = AlbumList()
+    var playlistList: PlaylistList = PlaylistList()
     var songList: SongList = SongList()
     
     let cellIdentifier = "cell"
@@ -36,9 +36,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         isShowingAlbums = true
-        albumList = theAppModel.albumList
-        playlistList = theAppModel.playlistList
-        songList = theAppModel.songList
+        albumList = theAppModel.fullModel.albumList
+        playlistList = theAppModel.fullModel.playlistList
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
@@ -122,20 +121,18 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func addAlbumToAlbumList() {
         var newAlbum: Album = Album(name: nameField.text, artist: artistField.text, composer: producerField.text, year: Int(yearStepper.value))
-        albumList.append(newAlbum)
+        albumList.albums.append(newAlbum)
         refreshUIFields()
         sendFieldsToFirstResponder()
-        theAppModel.albumList = albumList
         tableView.reloadData()
     }
    
     @IBAction func removeAlbum(sender: UIButton) {
-        for (idx, album) in enumerate(self.albumList) {
+        for (idx, album) in enumerate(self.albumList.albums) {
             if album.name == nameField.text {
-                self.albumList.removeAtIndex(idx)
+                self.albumList.albums.removeAtIndex(idx)
             }
         }
-        theAppModel.albumList = albumList
         tableView.reloadData()
         refreshUIFields()
     }
@@ -149,21 +146,19 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             alertView.show();
         } else {
             var newPlaylist: Playlist = Playlist(name: nameField.text)
-            playlistList.append(newPlaylist)
+            playlistList.playlist.append(newPlaylist)
             refreshUIFields()
         }
-        theAppModel.playlistList = playlistList
         sendFieldsToFirstResponder()
         tableView.reloadData()
     }
     
     @IBAction func removePlaylist(sender: UIButton) {
-        for (idx, playlist) in enumerate(self.playlistList) {
+        for (idx, playlist) in enumerate(self.playlistList.playlist) {
             if playlist.playlistName == nameField.text {
-                self.playlistList.removeAtIndex(idx)
+                self.playlistList.playlist.removeAtIndex(idx)
             }
         }
-        theAppModel.playlistList = playlistList
         tableView.reloadData()
         refreshUIFields()
 
@@ -180,9 +175,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (isShowingAlbums) {
-            return albumList.count
+            return albumList.albums.count
         } else {
-            return playlistList.count
+            return playlistList.playlist.count
         }
     }
     
@@ -192,10 +187,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellIdentifier)
         
         if (isShowingAlbums) {
-            cell.textLabel?.text = albumList[indexPath.row].name
-            cell.detailTextLabel?.text = albumList[indexPath.row].artist
+            cell.textLabel?.text = albumList.albums[indexPath.row].name
+            cell.detailTextLabel?.text = albumList.albums[indexPath.row].artist
         } else {
-            cell.textLabel?.text = playlistList[indexPath.row].playlistName
+            cell.textLabel?.text = playlistList.playlist[indexPath.row].playlistName
         }
         
         return cell

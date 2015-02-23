@@ -11,14 +11,10 @@ import Foundation
 private let _appModelSharedInstance = SharedAppModel()
 
 class SharedAppModel {
-    let songList: SongList
-    var albumList: [Album]
-    var playlistList: [Playlist]
+    let fullModel: FullModel
 
     init() {
-        songList = SongList()
-        albumList = []
-        playlistList = []
+        fullModel = FullModel()
     }
     
     class var theSharedAppModel: SharedAppModel {

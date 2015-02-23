@@ -398,7 +398,7 @@
                         <viewControllerLayoutGuide type="top" id="UG5-7c-f6p"/>
                         <viewControllerLayoutGuide type="bottom" id="r5l-9q-h2v"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CiG-iJ-YRY">
+                    <view key="view" contentMode="scaleToFill" id="CiG-iJ-YRY" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -425,6 +425,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nko-Gh-0ka">
+                                <rect key="frame" x="16" y="285" width="568" height="271"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -442,6 +446,7 @@
                     <connections>
                         <outlet property="apTableView" destination="XPo-mw-1L1" id="U5x-RU-G9Y"/>
                         <outlet property="listName" destination="NKB-xx-qSH" id="Dvp-IZ-S3j"/>
+                        <outlet property="songsTableView" destination="Nko-Gh-0ka" id="ePt-xL-DeY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3SN-Xm-MaA" userLabel="First Responder" sceneMemberID="firstResponder"/>

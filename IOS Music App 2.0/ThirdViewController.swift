@@ -11,10 +11,13 @@ import UIKit
 class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var apTableView: UITableView!
+    @IBOutlet weak var songsTableView: UITableView!
     @IBOutlet weak var listName: UILabel!
     
     var theAppModel: SharedAppModel = SharedAppModel.theSharedAppModel
     var songList: SongList = SongList()
+    var albumList: AlbumList = AlbumList()
+    var playlistList: PlaylistList = PlaylistList()
     
     let cellIdentifier = "dog"
     var isShowingAlbums:Bool = true
@@ -22,14 +25,18 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         isShowingAlbums = true
+        apTableView.delegate = self
+        apTableView.dataSource = self
+        albumList = theAppModel.fullModel.albumList
+        playlistList = theAppModel.fullModel.playlistList
         self.apTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (isShowingAlbums) {
-            return theAppModel.albumList.count
+            return albumList.albums.count
         } else {
-            return theAppModel.playlistList.count
+            return playlistList.playlist.count
         }
     }
     
@@ -39,10 +46,10 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: cellIdentifier)
         
         if (isShowingAlbums) {
-            cell.textLabel?.text = theAppModel.albumList[indexPath.row].name
-            cell.detailTextLabel?.text = theAppModel.albumList[indexPath.row].artist
+            cell.textLabel?.text = albumList.albums[indexPath.row].name
+            cell.detailTextLabel?.text = albumList.albums[indexPath.row].artist
         } else {
-            cell.textLabel?.text = theAppModel.playlistList[indexPath.row].playlistName
+            cell.textLabel?.text = playlistList.playlist[indexPath.row].playlistName
         }
         
         return cell
