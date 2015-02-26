@@ -21,7 +21,6 @@ class FourthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         // Do any additional setup after loading the view.
     }
@@ -48,6 +47,11 @@ class FourthViewController: UIViewController {
         currentArtist.text = artistTextField.text
         artistTextField.text = ""
 
+    }
+    
+    @IBAction func backgroundTouch(sender: UIControl) {
+        artistTextField.resignFirstResponder()
+        resultsField.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {

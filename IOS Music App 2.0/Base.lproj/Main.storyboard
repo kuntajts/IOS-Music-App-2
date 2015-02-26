@@ -380,7 +380,7 @@
                         <viewControllerLayoutGuide type="top" id="3pY-OW-JAT"/>
                         <viewControllerLayoutGuide type="bottom" id="AsH-HB-KQs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vwb-Og-V8n">
+                    <view key="view" contentMode="scaleToFill" id="vwb-Og-V8n" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -404,20 +404,20 @@
                                     <action selector="displayClicked:" destination="cAU-jA-LVt" eventType="touchUpInside" id="lef-cr-hR1"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4n-ft-eN9">
-                                <rect key="frame" x="16" y="168" width="568" height="375"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSd-ho-HQa">
                                 <rect key="frame" x="119" y="139" width="465" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIr-Hk-TC7">
+                                <rect key="frame" x="24" y="168" width="560" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs by:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIh-Rf-9h2">
-                                <rect key="frame" x="24" y="139" width="78" height="21"/>
+                                <rect key="frame" x="16" y="139" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -425,30 +425,34 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jSd-ho-HQa" firstAttribute="top" secondItem="J3D-Wi-nNC" secondAttribute="bottom" constant="23" id="6Oi-O2-9Lf"/>
-                            <constraint firstItem="p4n-ft-eN9" firstAttribute="centerX" secondItem="J3D-Wi-nNC" secondAttribute="centerX" id="7Wm-qQ-MIa"/>
-                            <constraint firstItem="jSd-ho-HQa" firstAttribute="trailing" secondItem="38g-5o-oq9" secondAttribute="trailing" id="Coh-7k-uEs"/>
-                            <constraint firstItem="1zq-zq-Adi" firstAttribute="leading" secondItem="p4n-ft-eN9" secondAttribute="leading" id="FNA-5A-Dfm"/>
-                            <constraint firstItem="p4n-ft-eN9" firstAttribute="leading" secondItem="vwb-Og-V8n" secondAttribute="leadingMargin" id="IaM-ye-SK5"/>
-                            <constraint firstItem="AsH-HB-KQs" firstAttribute="top" secondItem="p4n-ft-eN9" secondAttribute="bottom" constant="8" symbolic="YES" id="JCx-Aj-lln"/>
-                            <constraint firstItem="1zq-zq-Adi" firstAttribute="centerX" secondItem="UIh-Rf-9h2" secondAttribute="centerX" id="LaR-HC-YEF"/>
-                            <constraint firstItem="jSd-ho-HQa" firstAttribute="leading" secondItem="38g-5o-oq9" secondAttribute="leading" id="NbJ-oP-LcB"/>
-                            <constraint firstItem="p4n-ft-eN9" firstAttribute="top" secondItem="UIh-Rf-9h2" secondAttribute="bottom" constant="8" symbolic="YES" id="Ok3-9D-u5w"/>
-                            <constraint firstItem="38g-5o-oq9" firstAttribute="top" secondItem="3pY-OW-JAT" secondAttribute="bottom" constant="23" id="PNZ-8l-402"/>
-                            <constraint firstItem="J3D-Wi-nNC" firstAttribute="top" secondItem="38g-5o-oq9" secondAttribute="bottom" constant="13" id="Thk-CD-HkV"/>
-                            <constraint firstItem="1zq-zq-Adi" firstAttribute="top" secondItem="3pY-OW-JAT" secondAttribute="bottom" constant="27" id="dGb-p5-Hb4"/>
-                            <constraint firstItem="UIh-Rf-9h2" firstAttribute="baseline" secondItem="jSd-ho-HQa" secondAttribute="firstBaseline" id="dh5-1c-ZAy"/>
-                            <constraint firstItem="jSd-ho-HQa" firstAttribute="trailing" secondItem="p4n-ft-eN9" secondAttribute="trailing" id="fhX-Kf-tO7"/>
-                            <constraint firstItem="38g-5o-oq9" firstAttribute="trailing" secondItem="vwb-Og-V8n" secondAttribute="trailingMargin" id="g0w-GC-AJK"/>
-                            <constraint firstItem="UIh-Rf-9h2" firstAttribute="baseline" secondItem="jSd-ho-HQa" secondAttribute="baseline" id="pAv-A7-fBs"/>
-                            <constraint firstItem="jSd-ho-HQa" firstAttribute="leading" secondItem="UIh-Rf-9h2" secondAttribute="trailing" constant="17" id="v5N-gs-lrm"/>
+                            <constraint firstItem="38g-5o-oq9" firstAttribute="trailing" secondItem="vwb-Og-V8n" secondAttribute="trailingMargin" id="9b0-bx-dVX"/>
+                            <constraint firstItem="FIr-Hk-TC7" firstAttribute="trailing" secondItem="jSd-ho-HQa" secondAttribute="trailing" id="9sQ-Zr-zTU"/>
+                            <constraint firstItem="UIh-Rf-9h2" firstAttribute="leading" secondItem="vwb-Og-V8n" secondAttribute="leadingMargin" id="AOi-yS-cVa"/>
+                            <constraint firstItem="UIh-Rf-9h2" firstAttribute="baseline" secondItem="jSd-ho-HQa" secondAttribute="baseline" id="D6s-6j-nvw"/>
+                            <constraint firstItem="FIr-Hk-TC7" firstAttribute="top" secondItem="UIh-Rf-9h2" secondAttribute="bottom" constant="8" symbolic="YES" id="K2i-fr-p5S"/>
+                            <constraint firstItem="38g-5o-oq9" firstAttribute="leading" secondItem="1zq-zq-Adi" secondAttribute="trailing" constant="8" symbolic="YES" id="XeM-aa-1Z6"/>
+                            <constraint firstItem="AsH-HB-KQs" firstAttribute="top" secondItem="FIr-Hk-TC7" secondAttribute="bottom" constant="8" symbolic="YES" id="anU-jF-j6F"/>
+                            <constraint firstItem="J3D-Wi-nNC" firstAttribute="top" secondItem="38g-5o-oq9" secondAttribute="bottom" constant="13" id="dl5-6P-qI0"/>
+                            <constraint firstItem="1zq-zq-Adi" firstAttribute="top" secondItem="3pY-OW-JAT" secondAttribute="bottom" constant="27" id="i2Y-Ti-qkF"/>
+                            <constraint firstItem="jSd-ho-HQa" firstAttribute="leading" secondItem="38g-5o-oq9" secondAttribute="leading" id="iHe-1z-VYC"/>
+                            <constraint firstItem="UIh-Rf-9h2" firstAttribute="leading" secondItem="1zq-zq-Adi" secondAttribute="leading" id="jkz-h9-IT0"/>
+                            <constraint firstItem="38g-5o-oq9" firstAttribute="trailing" secondItem="jSd-ho-HQa" secondAttribute="trailing" id="ooN-pr-sLe"/>
+                            <constraint firstItem="FIr-Hk-TC7" firstAttribute="leading" secondItem="vwb-Og-V8n" secondAttribute="leadingMargin" constant="8" id="ovf-zP-MDl"/>
+                            <constraint firstItem="J3D-Wi-nNC" firstAttribute="centerX" secondItem="vwb-Og-V8n" secondAttribute="centerX" id="rtN-da-MXj"/>
+                            <constraint firstItem="38g-5o-oq9" firstAttribute="top" secondItem="3pY-OW-JAT" secondAttribute="bottom" constant="23" id="tXi-3G-2mu"/>
+                            <constraint firstItem="jSd-ho-HQa" firstAttribute="leading" secondItem="UIh-Rf-9h2" secondAttribute="trailing" constant="25" id="uCT-rx-Lnu"/>
+                            <constraint firstItem="UIh-Rf-9h2" firstAttribute="baseline" secondItem="jSd-ho-HQa" secondAttribute="firstBaseline" id="wEz-tg-X32"/>
+                            <constraint firstItem="jSd-ho-HQa" firstAttribute="top" secondItem="J3D-Wi-nNC" secondAttribute="bottom" constant="23" id="wj3-GR-ij9"/>
                         </constraints>
+                        <connections>
+                            <action selector="backgroundTouch:" destination="cAU-jA-LVt" eventType="touchDown" id="IBC-Ll-xL7"/>
+                        </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Artists" id="tKr-Wj-0gw"/>
+                    <tabBarItem key="tabBarItem" title="Artists" image="second" id="tKr-Wj-0gw"/>
                     <connections>
                         <outlet property="artistTextField" destination="38g-5o-oq9" id="CgC-9x-YUL"/>
                         <outlet property="currentArtist" destination="jSd-ho-HQa" id="quO-Ee-rae"/>
-                        <outlet property="resultsField" destination="p4n-ft-eN9" id="NsD-5g-ejP"/>
+                        <outlet property="resultsField" destination="FIr-Hk-TC7" id="TsU-Ne-TBi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15W-GI-jwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -476,10 +480,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--ThirdViewController-->
+        <!--Edit-->
         <scene sceneID="hr8-hy-glG">
             <objects>
-                <viewController title="ThirdViewController" id="0Ko-fC-eLn" customClass="ThirdViewController" customModule="IOS_Music_App_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ThirdViewController" id="0Ko-fC-eLn" userLabel="Edit" customClass="ThirdViewController" customModule="IOS_Music_App_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UG5-7c-f6p"/>
                         <viewControllerLayoutGuide type="bottom" id="r5l-9q-h2v"/>
@@ -549,7 +553,7 @@
                             <constraint firstItem="fwM-om-hAW" firstAttribute="firstBaseline" secondItem="NKB-xx-qSH" secondAttribute="baseline" id="wmH-42-dim"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Edit" id="jY1-Ev-mNz"/>
+                    <tabBarItem key="tabBarItem" title="Edit" image="first" id="jY1-Ev-mNz"/>
                     <connections>
                         <outlet property="apTableView" destination="XPo-mw-1L1" id="U5x-RU-G9Y"/>
                         <outlet property="listName" destination="NKB-xx-qSH" id="Dvp-IZ-S3j"/>
