@@ -24,7 +24,6 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var lengthSlider: UISlider!
     
     var theAppModel: SharedAppModel = SharedAppModel.theSharedAppModel
-    var mySongList = SongList()
     
     /**
     * Function: viewDidLoad
@@ -36,7 +35,7 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mySongList = theAppModel.fullModel.songList
+        //theAppModel.fullModel.songList.addSong("whatsup", artist: "yeaup", album: "", year: 1934, composer: "", length: 23.2)
     }
     
     /**
@@ -159,7 +158,8 @@ class FirstViewController: UIViewController {
     */
 
     func addSongToSongList() {
-        mySongList.addSong(titleField.text, artist: artistField.text, album: albumField.text, year: Int(yearStepper.value), composer: composerField.text, length: Float(lengthSlider.value))
+        theAppModel.fullModel.songList.addSong(titleField.text, artist: artistField.text, album: albumField.text, year: Int(yearStepper.value), composer: composerField.text, length: Float(lengthSlider.value))
+        theAppModel.fullModel.songList.alphabetical()
         refreshUIFields()
 
     }
@@ -171,9 +171,9 @@ class FirstViewController: UIViewController {
     * Created by:Jordan Smith
     */
     @IBAction func removedClicked(sender: UIButton) {
-        var originalSize = mySongList.songs.count
-        mySongList.removeSong(titleToRemoveField.text)
-        if (originalSize != mySongList.songs.count) {
+        var originalSize = theAppModel.fullModel.songList.songs.count
+        theAppModel.fullModel.songList.removeSong(titleToRemoveField.text)
+        if (originalSize != theAppModel.fullModel.songList.songs.count) {
             let alert = UIAlertView(title: "Song Removed", message: "Your song \(titleToRemoveField.text) has been removed!", delegate: self, cancelButtonTitle: "Okay")
             alert.show()
             refreshUIFields()

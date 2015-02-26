@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -420,9 +422,9 @@
                                 </constraints>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Songs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-xx-qSH">
-                                <rect key="frame" x="261" y="256" width="79" height="21"/>
+                                <rect key="frame" x="16" y="256" width="79" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="XZ4-WJ-YPp"/>
+                                    <constraint firstAttribute="width" constant="79" id="fga-YL-1j4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -432,6 +434,16 @@
                                 <rect key="frame" x="16" y="285" width="568" height="271"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fwM-om-hAW">
+                                <rect key="frame" x="236" y="253" width="129" height="29"/>
+                                <segments>
+                                    <segment title="Add"/>
+                                    <segment title="Remove"/>
+                                </segments>
+                                <connections>
+                                    <action selector="songsViewChanged:" destination="0Ko-fC-eLn" eventType="valueChanged" id="lbY-Aq-iAP"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -441,11 +453,16 @@
                             <constraint firstItem="Fw1-WT-mlB" firstAttribute="top" secondItem="UG5-7c-f6p" secondAttribute="bottom" id="JpC-oq-5Jc"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Nko-Gh-0ka" secondAttribute="bottom" constant="44" id="K0K-uN-wcq"/>
                             <constraint firstItem="XPo-mw-1L1" firstAttribute="leading" secondItem="CiG-iJ-YRY" secondAttribute="leadingMargin" id="Ki3-Xz-hVz"/>
+                            <constraint firstItem="fwM-om-hAW" firstAttribute="top" secondItem="XPo-mw-1L1" secondAttribute="bottom" constant="5" id="Laf-Sp-Pzc"/>
+                            <constraint firstItem="NKB-xx-qSH" firstAttribute="top" secondItem="XPo-mw-1L1" secondAttribute="bottom" constant="8" symbolic="YES" id="Sh5-M3-J50"/>
                             <constraint firstItem="XPo-mw-1L1" firstAttribute="top" secondItem="Fw1-WT-mlB" secondAttribute="bottom" constant="8" symbolic="YES" id="Wwc-E4-0uS"/>
-                            <constraint firstItem="NKB-xx-qSH" firstAttribute="top" secondItem="XPo-mw-1L1" secondAttribute="bottom" constant="8" symbolic="YES" id="cEz-vK-fyO"/>
+                            <constraint firstItem="NKB-xx-qSH" firstAttribute="leading" secondItem="XPo-mw-1L1" secondAttribute="leading" id="d20-CY-quc"/>
                             <constraint firstItem="Nko-Gh-0ka" firstAttribute="leading" secondItem="XPo-mw-1L1" secondAttribute="leading" id="eUt-na-sk4"/>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="centerX" secondItem="NKB-xx-qSH" secondAttribute="centerX" id="nT8-HU-mGy"/>
-                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="top" secondItem="NKB-xx-qSH" secondAttribute="bottom" constant="8" symbolic="YES" id="vtv-s4-Csg"/>
+                            <constraint firstItem="fwM-om-hAW" firstAttribute="baseline" secondItem="NKB-xx-qSH" secondAttribute="baseline" id="j6t-Cu-3Ei"/>
+                            <constraint firstItem="fwM-om-hAW" firstAttribute="centerX" secondItem="XPo-mw-1L1" secondAttribute="centerX" id="qmD-gX-a25"/>
+                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="top" secondItem="NKB-xx-qSH" secondAttribute="bottom" constant="8" symbolic="YES" id="ufM-ZF-RWR"/>
+                            <constraint firstItem="fwM-om-hAW" firstAttribute="baseline" secondItem="NKB-xx-qSH" secondAttribute="firstBaseline" id="uzk-La-6GI"/>
+                            <constraint firstItem="fwM-om-hAW" firstAttribute="firstBaseline" secondItem="NKB-xx-qSH" secondAttribute="baseline" id="wmH-42-dim"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="jY1-Ev-mNz"/>

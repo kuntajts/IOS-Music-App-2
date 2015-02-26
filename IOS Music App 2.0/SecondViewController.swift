@@ -47,7 +47,17 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         isShowingAlbums = true
         albumList = theAppModel.fullModel.albumList
         playlistList = theAppModel.fullModel.playlistList
+        //sampleAdd()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+    }   
+    
+    func sampleAdd(){
+        var newAlbum:Album = Album(name: "Sugr", artist: "Sugr", composer: "", year: 3444)
+        var newAlbum2:Album = Album(name: "YEAH", artist: "hey", composer: "", year: 3244)
+        albumList.albums.append(newAlbum)
+        albumList.albums.append(newAlbum2)
+        theAppModel.fullModel.songList.addSong("yo", artist: "Sugr", album: "yeah", year: 19, composer: "", length: 32.2)
+        albumList.albums[0].addSongToAlbum(theAppModel.fullModel.songList.songs[1])
     }
     /**
     * Function: refreshUI
