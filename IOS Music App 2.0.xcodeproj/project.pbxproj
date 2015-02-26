@@ -23,6 +23,7 @@
 		1AC900571A8FD4EC009128E0 /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900561A8FD4EC009128E0 /* SongList.swift */; };
 		1AC900591A8FD509009128E0 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC900581A8FD509009128E0 /* Playlist.swift */; };
 		1AC9005D1A8FF23C009128E0 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9005C1A8FF23C009128E0 /* Album.swift */; };
+		563EAB7F1A9FCD49005965E2 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563EAB7E1A9FCD49005965E2 /* FourthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		1AC900561A8FD4EC009128E0 /* SongList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
 		1AC900581A8FD509009128E0 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		1AC9005C1A8FF23C009128E0 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		563EAB7E1A9FCD49005965E2 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				1AC900341A8FD4AF009128E0 /* FirstViewController.swift */,
 				1AC900361A8FD4AF009128E0 /* SecondViewController.swift */,
 				1AC900381A8FD4AF009128E0 /* Main.storyboard */,
+				563EAB7E1A9FCD49005965E2 /* FourthViewController.swift */,
 				0F3644CB1A9ACA850009957A /* ThirdViewController.swift */,
 				0F3644CD1A9AE2710009957A /* FullModel.swift */,
 				1AC9003B1A8FD4AF009128E0 /* Images.xcassets */,
@@ -247,6 +250,7 @@
 				1AC900551A8FD4DA009128E0 /* Song.swift in Sources */,
 				1AC900371A8FD4AF009128E0 /* SecondViewController.swift in Sources */,
 				1AC900331A8FD4AF009128E0 /* AppDelegate.swift in Sources */,
+				563EAB7F1A9FCD49005965E2 /* FourthViewController.swift in Sources */,
 				0F3644CE1A9AE2710009957A /* FullModel.swift in Sources */,
 				1AC900351A8FD4AF009128E0 /* FirstViewController.swift in Sources */,
 				1AC900591A8FD509009128E0 /* Playlist.swift in Sources */,
