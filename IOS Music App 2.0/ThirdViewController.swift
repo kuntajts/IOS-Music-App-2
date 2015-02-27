@@ -50,9 +50,9 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if tableView.tag == 0 {
             albumPlaylistIndexSelected = indexPath.row
             if isShowingAlbums {
-                listName.text = String(format: "\(albumList.albums[albumPlaylistIndexSelected].name): %d", Double(albumList.albums[albumPlaylistIndexSelected].length))
+                listName.text = String(format: "\(albumList.albums[albumPlaylistIndexSelected].name): %d", Float(albumList.albums[albumPlaylistIndexSelected].length))
             } else {
-                listName.text = String(format: "\(playlistList.playlist[albumPlaylistIndexSelected].playlistName): %d", Double(playlistList.playlist[albumPlaylistIndexSelected].length))
+                listName.text = String(format: "\(playlistList.playlist[albumPlaylistIndexSelected].playlistName): %d", Float(playlistList.playlist[albumPlaylistIndexSelected].length))
             }
         } else {
             songIndexSelected = indexPath.row
@@ -70,11 +70,14 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func addSong() {
         if songIndexSelected >= 0 && albumPlaylistIndexSelected >= 0{
             if isShowingAlbums {
-                albumList.albums[albumPlaylistIndexSelected].addSongToAlbum(songList.songs[songIndexSelected])
-                listName.text = String(format: "\(albumList.albums[albumPlaylistIndexSelected].name): %d", Float(albumList.albums[albumPlaylistIndexSelected].getTotalLength()))
+                theAppModel.fullModel.albumList.albums[albumPlaylistIndexSelected].addSongToAlbum(songList.songs[songIndexSelected])
+                
+                listName.text = String(format: "\(theAppModel.fullModel.albumList.albums[albumPlaylistIndexSelected].name): %f", theAppModel.fullModel.albumList.albums[albumPlaylistIndexSelected].length)
             } else {
-                playlistList.playlist[albumPlaylistIndexSelected].addSongToPlaylist(songList.songs[songIndexSelected])
-                listName.text = String(format: "\(playlistList.playlist[albumPlaylistIndexSelected].playlistName): %d", Float(playlistList.playlist[albumPlaylistIndexSelected].getTotalLength()))
+                theAppModel.fullModel.playlistList.playlist[albumPlaylistIndexSelected].addSongToPlaylist(songList.songs[songIndexSelected])
+                listName.text = String(format: "\(theAppModel.fullModel.playlistList.playlist[albumPlaylistIndexSelected].playlistName): %f", theAppModel.fullModel.playlistList.playlist[albumPlaylistIndexSelected].length)
+
+                
             }
         }
     }
@@ -83,8 +86,10 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if songIndexSelected >= 0 && albumPlaylistIndexSelected >= 0 {
             if isShowingAlbums {
                 albumList.albums[albumPlaylistIndexSelected].removeSongFromAlbum(albumList.albums[albumPlaylistIndexSelected].songs[songIndexSelected].name)
+                listName.text = String(format: "\(theAppModel.fullModel.albumList.albums[albumPlaylistIndexSelected].name): %f", theAppModel.fullModel.albumList.albums[albumPlaylistIndexSelected].length)
             } else {
                 playlistList.playlist[albumPlaylistIndexSelected].removeSongFromPlaylist(playlistList.playlist[albumPlaylistIndexSelected].songs[songIndexSelected].name)
+                listName.text = String(format: "\(theAppModel.fullModel.playlistList.playlist[albumPlaylistIndexSelected].playlistName): %f", theAppModel.fullModel.playlistList.playlist[albumPlaylistIndexSelected].length)
             }
         }
     }

@@ -57,7 +57,6 @@ class FirstViewController: UIViewController {
                 }
             }
         }
-
         yearLabel.text=String(format: "Year (%d):",Int(yearStepper.value))
         lengthLabel.text=String(format: "Length (%d:\(seconds)):",Int(lengthSlider.value/60))
         /*var arr:[Song] = mySongList.songsByArtist("a")
