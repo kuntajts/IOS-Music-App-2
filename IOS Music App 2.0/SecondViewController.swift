@@ -47,18 +47,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         isShowingAlbums = true
         albumList = theAppModel.fullModel.albumList
         playlistList = theAppModel.fullModel.playlistList
-        //sampleAdd()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-    }   
-    
-    func sampleAdd(){
-        var newAlbum:Album = Album(name: "Sugr", artist: "Sugr", composer: "", year: 3444)
-        var newAlbum2:Album = Album(name: "YEAH", artist: "hey", composer: "", year: 3244)
-        albumList.albums.append(newAlbum)
-        albumList.albums.append(newAlbum2)
-        theAppModel.fullModel.songList.addSong("yo", artist: "Sugr", album: "yeah", year: 19, composer: "", length: 32.2)
-        albumList.albums[0].addSongToAlbum(theAppModel.fullModel.songList.songs[1])
     }
+
     /**
     * Function: refreshUI
     * Purpose: Gets the year value from the stepper and puts it in the label
@@ -69,6 +60,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func refreshUI(){
         yearLabel.text=String(format: "Year (%d):",Int(yearStepper.value))
     }
+
     /**
     * Function: refreshUIFields
     * Purpose: clears the fields and sets the stepper back to its initial value
@@ -84,6 +76,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         refreshUI()
 
     }
+
     /**
     * Function: yearChanged
     * Purpose: changes the year label when the stepper is changed
@@ -94,6 +87,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func yearChanged(sender: UIStepper) {
         refreshUI()
     }
+
     /**
     * Function: toggleControls
     * Purpose: hides fields and labels that are needed for album adding and playlist adding. Also sets boolean value for isShowingAlbums so it knows which list needs to be used. Also reloads data for table and refreshes views.
@@ -136,6 +130,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.reloadData()
         refreshUIFields()
     }
+
     /**
     * Function: addAlbum
     * Purpose: Checks to see if all fields are filled out. Puts up an alert if necesary fields are not filled out. Asks if you are sure you want to add if optional fields not filled.
@@ -167,6 +162,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
 
     }
+
     /**
     * Function: addAlbumToAlbumList
     * Purpose: adds the actual album to the list of all the albums based on fields that were filled out. Also refreshes table and fields to show update
@@ -181,6 +177,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         sendFieldsToFirstResponder()
         tableView.reloadData()
     }
+
     /**
     * Function: removeAlbum
     * Purpose: removes an album based on the name that is in the name field. Also updates table based on new list.
@@ -197,6 +194,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.reloadData()
         refreshUIFields()
     }
+
     /**
     * Function: addPlaylist
     * Purpose: Checks to make sure that a name was filled out for the playlist. Gives Warning if not. Then adds the playlist to the list of playlists, and updates table and fields.
@@ -219,6 +217,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         sendFieldsToFirstResponder()
         tableView.reloadData()
     }
+
     /**
     * Function: removePlaylist
     * Purpose: removes the playlist with the title that is entered in name field. Updates table.
@@ -236,6 +235,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         refreshUIFields()
 
     }
+
     /**
     * Function: backgroundTouch
     * Purpose: recognizes there was a touch elsewhere and then calls sendFieldsToFirstResponder
@@ -246,6 +246,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func backgroundTouch(sender: UIControl) {
         sendFieldsToFirstResponder()
     }
+
     /**
     * Function: sendFieldsToFirstResponder
     * Purpose: will get rid of the pop up keyboard when called due to background touch
@@ -258,6 +259,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         artistField.resignFirstResponder()
         producerField.resignFirstResponder()
     }
+
     /**
     * Function: tableView
     * Purpose: based on whether showing album or playlist, counts the number of items in list in order to know how many it will have to print to screen.
@@ -272,6 +274,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return playlistList.playlist.count
         }
     }
+    
     /**
     * Function: tableView
     * Purpose: fills in the cells of the table with the name of the list and if its an album the artist of the album as well.
