@@ -1,10 +1,13 @@
-//
-//  FourthViewController.swift
-//  IOS Music App 2.0
-//
-//  Created by Charles Woodward on 2/26/15.
-//  Copyright (c) 2015 Kaloyan Popzlatev. All rights reserved.
-//
+/*
+* FourthViewController.swift
+* Practicum 2: IOS Music App 2
+* Description: Creates controller that allows the user to choose an artist and display all the songs by that artist.
+* Created by: Charles Woodward and Jordan Smith
+* Collaborators: Sam Kamenetz and Kal Popzlatev
+* Creation date:  2/14/15
+* Date last modified:  2/26/2015
+* Copyright (c) 2015 Sugr. All rights reserved.
+*/
 
 import UIKit
 
@@ -18,25 +21,48 @@ class FourthViewController: UIViewController {
     var songList: SongList = SongList()
     var albumList: AlbumList = AlbumList()
     var playlistList: PlaylistList = PlaylistList()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    /**
+    * Function: viewWillApear
+    * Purpose: override for when the tab is selected to clear the entry fields.
+    * Inputs: animated
+    * Output: none
+    * Created by Charles Woodward
+    */
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         refreshUI()
     }
     
+    /**
+    * Function: refreshUI()
+    * Purpose: called in order to clear the input fields
+    * Inputs: none
+    * Output: none
+    * Created by Charles Woodward
+    */
+
     func refreshUI() {
         artistTextField.text = ""
         resultsField.text = ""
         currentArtist.text = ""
     }
 
-    
+    /**
+    * Function: displayClicked
+    * Purpose: when button is pressed the songs by the inputed artist will show up in the textView. The label above the textView will show what artist is being displayed, also clears input field.
+    * Inputs: none
+    * Output: none
+    * Created by Charles Woodward
+    */
+
     @IBAction func displayClicked(sender: UIButton) {
         var results = ""
         let songArray = theAppModel.fullModel.songList.songsByArtist(artistTextField.text)
@@ -49,6 +75,14 @@ class FourthViewController: UIViewController {
 
     }
     
+    /**
+    * Function: backgroundTouch
+    * Purpose: will resign first responder when background of view is clicked in order to get rid of the keyboard.
+    * Inputs: none
+    * Output: none
+    * Created by Charles Woodward
+    */
+
     @IBAction func backgroundTouch(sender: UIControl) {
         artistTextField.resignFirstResponder()
         resultsField.resignFirstResponder()
@@ -58,16 +92,5 @@ class FourthViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

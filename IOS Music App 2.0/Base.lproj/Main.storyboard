@@ -506,24 +506,24 @@
                                 <rect key="frame" x="16" y="56" width="568" height="192"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="192" id="A9M-1W-ejW"/>
+                                    <constraint firstAttribute="height" constant="192" id="dsw-fZ-u6C"/>
                                 </constraints>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="All Songs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-xx-qSH">
-                                <rect key="frame" x="16" y="256" width="79" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="fga-YL-1j4"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Songs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-xx-qSH">
+                                <rect key="frame" x="16" y="256" width="391" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nko-Gh-0ka">
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nko-Gh-0ka">
                                 <rect key="frame" x="16" y="285" width="568" height="271"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fwM-om-hAW">
-                                <rect key="frame" x="236" y="253" width="129" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fwM-om-hAW">
+                                <rect key="frame" x="415" y="253" width="129" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="1hs-fW-q6z"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Add"/>
                                     <segment title="Remove"/>
@@ -535,22 +535,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="trailing" secondItem="Nko-Gh-0ka" secondAttribute="trailing" id="8jN-N6-JOj"/>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="centerX" secondItem="Fw1-WT-mlB" secondAttribute="centerX" id="9Mu-PF-1t4"/>
-                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="trailing" secondItem="CiG-iJ-YRY" secondAttribute="trailingMargin" id="E3b-3N-I1h"/>
-                            <constraint firstItem="Fw1-WT-mlB" firstAttribute="top" secondItem="UG5-7c-f6p" secondAttribute="bottom" id="JpC-oq-5Jc"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Nko-Gh-0ka" secondAttribute="bottom" constant="44" id="K0K-uN-wcq"/>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="leading" secondItem="CiG-iJ-YRY" secondAttribute="leadingMargin" id="Ki3-Xz-hVz"/>
-                            <constraint firstItem="fwM-om-hAW" firstAttribute="top" secondItem="XPo-mw-1L1" secondAttribute="bottom" constant="5" id="Laf-Sp-Pzc"/>
-                            <constraint firstItem="NKB-xx-qSH" firstAttribute="top" secondItem="XPo-mw-1L1" secondAttribute="bottom" constant="8" symbolic="YES" id="Sh5-M3-J50"/>
-                            <constraint firstItem="XPo-mw-1L1" firstAttribute="top" secondItem="Fw1-WT-mlB" secondAttribute="bottom" constant="8" symbolic="YES" id="Wwc-E4-0uS"/>
-                            <constraint firstItem="NKB-xx-qSH" firstAttribute="leading" secondItem="XPo-mw-1L1" secondAttribute="leading" id="d20-CY-quc"/>
-                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="leading" secondItem="XPo-mw-1L1" secondAttribute="leading" id="eUt-na-sk4"/>
-                            <constraint firstItem="fwM-om-hAW" firstAttribute="baseline" secondItem="NKB-xx-qSH" secondAttribute="baseline" id="j6t-Cu-3Ei"/>
-                            <constraint firstItem="fwM-om-hAW" firstAttribute="centerX" secondItem="XPo-mw-1L1" secondAttribute="centerX" id="qmD-gX-a25"/>
-                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="top" secondItem="NKB-xx-qSH" secondAttribute="bottom" constant="8" symbolic="YES" id="ufM-ZF-RWR"/>
-                            <constraint firstItem="fwM-om-hAW" firstAttribute="baseline" secondItem="NKB-xx-qSH" secondAttribute="firstBaseline" id="uzk-La-6GI"/>
-                            <constraint firstItem="fwM-om-hAW" firstAttribute="firstBaseline" secondItem="NKB-xx-qSH" secondAttribute="baseline" id="wmH-42-dim"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="trailing" secondItem="CiG-iJ-YRY" secondAttribute="trailingMargin" id="0OF-hv-29b"/>
+                            <constraint firstItem="Fw1-WT-mlB" firstAttribute="top" secondItem="UG5-7c-f6p" secondAttribute="bottom" id="5Kz-2m-WuI"/>
+                            <constraint firstItem="fwM-om-hAW" firstAttribute="top" secondItem="XPo-mw-1L1" secondAttribute="bottom" constant="5" id="5xa-Yb-say"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="centerX" secondItem="Fw1-WT-mlB" secondAttribute="centerX" id="6th-Qd-w0x"/>
+                            <constraint firstItem="NKB-xx-qSH" firstAttribute="top" secondItem="XPo-mw-1L1" secondAttribute="bottom" constant="8" symbolic="YES" id="Bgd-nn-n3T"/>
+                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="leading" secondItem="CiG-iJ-YRY" secondAttribute="leadingMargin" id="M7N-HU-8C7"/>
+                            <constraint firstItem="fwM-om-hAW" firstAttribute="baseline" secondItem="NKB-xx-qSH" secondAttribute="firstBaseline" id="POj-7V-Xtt"/>
+                            <constraint firstItem="NKB-xx-qSH" firstAttribute="leading" secondItem="Nko-Gh-0ka" secondAttribute="leading" id="TNl-VT-y4C"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="leading" secondItem="NKB-xx-qSH" secondAttribute="leading" id="WGj-vh-4Xn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fwM-om-hAW" secondAttribute="trailing" constant="40" id="XIE-eZ-WuE"/>
+                            <constraint firstItem="fwM-om-hAW" firstAttribute="leading" secondItem="NKB-xx-qSH" secondAttribute="trailing" constant="8" symbolic="YES" id="bOj-aO-m7x"/>
+                            <constraint firstItem="Nko-Gh-0ka" firstAttribute="top" secondItem="NKB-xx-qSH" secondAttribute="bottom" constant="8" symbolic="YES" id="eK0-9v-bc5"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="trailing" secondItem="Nko-Gh-0ka" secondAttribute="trailing" id="mOs-Es-J9m"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Nko-Gh-0ka" secondAttribute="bottom" constant="44" id="maJ-9y-gXR"/>
+                            <constraint firstItem="NKB-xx-qSH" firstAttribute="baseline" secondItem="fwM-om-hAW" secondAttribute="firstBaseline" id="t4A-2o-OkB"/>
+                            <constraint firstItem="XPo-mw-1L1" firstAttribute="top" secondItem="Fw1-WT-mlB" secondAttribute="bottom" constant="8" symbolic="YES" id="vJ8-vk-0Q5"/>
+                            <constraint firstItem="fwM-om-hAW" firstAttribute="baseline" secondItem="NKB-xx-qSH" secondAttribute="baseline" id="wAH-Cd-oRP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Edit" image="first" id="jY1-Ev-mNz"/>

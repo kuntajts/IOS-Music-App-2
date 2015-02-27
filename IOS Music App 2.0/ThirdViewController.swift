@@ -75,7 +75,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if tableView.tag == 0 {
             albumPlaylistIndexSelected = indexPath.row
             if isShowingAlbums {
-                listName.text = String(format: "\(albumList.albums[albumPlaylistIndexSelected].name): %d", Float(albumList.albums[albumPlaylistIndexSelected].length))
+                listName.text = String(format: "\(albumList.albums[albumPlaylistIndexSelected].name): %d",Float(albumList.albums[albumPlaylistIndexSelected].length))
             } else {
                 listName.text = String(format: "\(playlistList.playlist[albumPlaylistIndexSelected].playlistName): %d", Float(playlistList.playlist[albumPlaylistIndexSelected].length))
             }
